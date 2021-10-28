@@ -4,10 +4,12 @@
 namespace App\Controller;
 
 
+use phpDocumentor\Reflection\Types\This;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class FirstController
+class FirstController extends AbstractController
 {
     /**
      * @Route("/")
@@ -23,9 +25,14 @@ class FirstController
      */
     public function show ($any): Response
     {
-        return new Response(sprintf(
-            'My second page by Symfony: "%s"!',
-            ucwords(str_replace('-', ' ', $any))
-        ));
+        $answers = [
+            'First question: ',
+            'Second question',
+            'Third question'
+        ];
+        return $this->render('first/show.html.twig', [
+            'first' => ucwords(str_replace('-', ' ', $any)),
+            'answers' => $answers
+        ]);
     }
 }
