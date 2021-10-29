@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+CompanyID: {{ companyID }} <br>
+    About:
+
+    <ul>
+
+        {% for parameter in parameters %}
+            <li>
+                {{ parameter }}
+            </li>
+        {% endfor %}
+
+    </ul>
+
+
+
+{% endblock %}
