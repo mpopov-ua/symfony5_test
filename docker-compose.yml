@@ -1,0 +1,27 @@
+version: "3.3"
+services:
+
+    database:
+        image: postgres:11-alpine
+    environment:
+        POSTGRES_USER: main
+        POSTGRES_PASSWORD: main
+        POSTGRES_DB: main
+        ports:
+            - "5432"
+
+    web:
+        image: nginx:latest
+        ports:
+            - "8080:80"
+        volumes:
+            - ./:/app/
+            - ./.dockerfiles/nginx/conf.d/:/etc/nginx/conf.d/
+        links:
+            - php
+    
+    php:
+        build:
+            context: ./.dockerfiles/php
+        volumes:
+            - ./:/app/
