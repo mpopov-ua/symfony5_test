@@ -15,7 +15,7 @@ class FirstController extends AbstractController
     /**
      * @return Response
      */
-    #[Route('/', name: 'homepage')]
+    #[Route('/home', name: 'homepage')]
     public function homepage (): Response
     {
         return new Response('My first page to Symfony: Homepage');
