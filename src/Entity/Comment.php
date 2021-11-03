@@ -105,6 +105,15 @@ class Comment
         return $this;
     }
 
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue ()
+    {
+        $this->createdAt=new \DateTime();
+    }
+
+
     public function getConference(): ?Conference
     {
         return $this->conference;
