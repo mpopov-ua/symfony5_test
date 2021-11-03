@@ -6,6 +6,7 @@ use App\Repository\ConferenceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JetBrains\PhpStorm\Pure;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
@@ -47,7 +48,7 @@ class Conference
      */
     private $slug;
 
-    public function __construct()
+    #[Pure] public function __construct()
     {
         $this->comments = new ArrayCollection();
     }

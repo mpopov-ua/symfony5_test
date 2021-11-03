@@ -9,7 +9,7 @@
     {% for conference in conferences %}
         <h4>{{ conference }}</h4>
         <p>
-          <a href="{{ path('conference_id', {id: conference.id }) }}">View</a>
+          <a href="{{ path('conference_slug', {slug: conference.slug }) }}">View</a>
             {# <a href="/conference/{{ conference.id }}">View</a> #}
         </p>
 

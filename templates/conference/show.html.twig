@@ -10,8 +10,8 @@
         <div> There are {{ comments|length }} comments.</div>
 
         {% for comment in comments %}
-            {% if comment.photofilename %}
-                <img src="{{ asset('uploads/photos/' ~ comment.photofilename) }}" />
+            {% if comment.photoFileName %}
+                <img src="{{ asset('uploads/photos/' ~ comment.photoFileName) }}" />
             {% endif %}
 
     <h4> Comment Author: {{ comment.author }}</h4>
@@ -23,11 +23,11 @@
         {% endfor %}
 
         {% if previous >= 0 %}
-            <a href="{{ path('conference_id', {id: conference.id, offset: previous}) }}">Previous</a>
+            <a href="{{ path('conference_slug', {slug: conference.slug, offset: previous}) }}">Previous</a>
         {% endif %}
 
         {% if next < comments|length %}
-            <a href="{{ path('conference_id', {id: conference.id, offset: next}) }}">Next</a>
+            <a href="{{ path('conference_slug', {slug: conference.slug, offset: next}) }}">Next</a>
         {% endif %}
     {% else %}
         <DIV>No comments have been posted yet for this conference.</DIV>
