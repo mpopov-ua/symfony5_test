@@ -30,6 +30,13 @@ class SpamCheckerTest extends TestCase
           $checker->getSpamScope($comment, $context);
       }
 
+    /**
+     * @param int $expectedScope
+     * @param ResponseInterface $response
+     * @param Comment $comment
+     * @param array $context
+     * @dataProvider getComments
+     */
       public function testSpamScope (int $expectedScope, ResponseInterface $response, Comment $comment, array $context)
       {
            $client = new MockHttpClient([$response]);
