@@ -23,5 +23,3 @@ framework:
             # 'App\Message\YourMessage': async
             APP\Message\CommentMessage: async
             Symfony\Component\Mailer\Messenger\SendEmailMessage: async
-            Symfony\Component\Notifier\Messenger\ChatMessage: async
-            Symfony\Component\Notifier\Messenger\SmsMessage: async
